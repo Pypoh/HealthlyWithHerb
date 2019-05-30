@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.pypoh.healthlywithherb.R;
 import com.example.pypoh.healthlywithherb.adapter.CarouselAdapter;
 import com.example.pypoh.healthlywithherb.model.DataItem;
@@ -57,9 +58,7 @@ public class HomeFragment extends Fragment {
 
     // Firebase
     private FirebaseDatabase database;
-    private DatabaseReference keranjangRef;
-    private DatabaseReference itemDataRef;
-    private DatabaseReference penjualRef;
+    private DatabaseReference dataObatRef;
 
     private FirebaseUser currentUser;
 
@@ -87,6 +86,7 @@ public class HomeFragment extends Fragment {
         ImageListener imageListener = new ImageListener() {
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 imageView.setImageResource(sampleImages[position]);
             }
         };
@@ -97,12 +97,6 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getContext(), "Carousel Clicked", Toast.LENGTH_SHORT).show();
             }
         });
-
-        // Set Dummy Data
-        dataSetItem.add(new DataItem("id0", "Daun", "Ini Penyakit","Ini contoh deskripsi.", "Kulit", null));
-        dataSetItem.add(new DataItem("id1", "Daun", "Ini Penyakit","Ini contoh deskripsi.", "Kulit", null));
-
-        dataSetList.add(new DataItemsList(0, "bg-parallax-carousel", "https://firebasestorage.googleapis.com/v0/b/fishgo-7d2ae.appspot.com/o/carousel_image%2Fbackgroundblue.jpg?alt=media&token=f522a333-965a-4f47-aac5-c56d8723e752", "#450003", "Kulit", dataSetItem));
 
         // Init Instance
         linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
@@ -116,29 +110,25 @@ public class HomeFragment extends Fragment {
 
         // Firebase Ref
         database = FirebaseDatabase.getInstance();
-//        keranjangRef = database.getReference("User");
-//        itemDataRef = database.getReference("Data");
-//        penjualRef = database.getReference("DataPenjual");
+        dataObatRef = database.getReference("DataObat");
+
+        loadData();
 
         return v;
     }
 
-    private void loadProduct() {
-        penjualRef.addValueEventListener(new ValueEventListener() {
+    private void loadData() {
+        dataObatRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 dataSetItem.clear();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    for (DataSnapshot dataProduct : ds.child("Produk").getChildren()) {
-                        DataItem dataItem = dataProduct.getValue(DataItem.class);
-                        dataItem.setUID(dataProduct.getKey());
-                        dataSetItem.add(dataItem);
-                    }
+                    DataItem dataItem = ds.getValue(DataItem.class);
+                    dataSetItem.add(dataItem);
                 }
                 dataSetList.clear();
-                dataSetList.add(new DataItemsList(1, "bg-parallax-carousel", "https://firebasestorage.googleapis.com/v0/b/fishgo-7d2ae.appspot.com/o/carousel_image%2Fbackgroundblue.jpg?alt=media&token=f522a333-965a-4f47-aac5-c56d8723e752", "#450003", "Ikan Tawar", dataSetItem));
-                dataSetList.add(new DataItemsList(2, "bg-parallax-carousel", "https://firebasestorage.googleapis.com/v0/b/fishgo-7d2ae.appspot.com/o/carousel_image%2Fbackgroundorange.jpg?alt=media&token=224c3bb4-0fbb-44c7-8fa3-1d27451fdefc", "#450003", "Ikan Tawar", dataSetItem));
-//                carouselAdapter.setData(dataSetList);
+                dataSetList.add(new DataItemsList(1, "bg-parallax-carousel", "https://firebasestorage.googleapis.com/v0/b/fishgo-7d2ae.appspot.com/o/carousel_image%2Fbackgroundblue.jpg?alt=media&token=f522a333-965a-4f47-aac5-c56d8723e752", "#450003", "Kulit", dataSetItem));
+                carouselAdapter.setmDataSet(dataSetList);
                 carouselAdapter.notifyDataSetChanged();
             }
 

@@ -40,6 +40,10 @@ public class CarouselAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.mDataSet = mDataSet;
     }
 
+    public void setmDataSet(List<DataItemsList> mDataSet) {
+        this.mDataSet = mDataSet;
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == CAROUSEL_PARALLAX_BG_VIEW_TYPE)

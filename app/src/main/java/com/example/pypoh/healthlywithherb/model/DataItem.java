@@ -23,9 +23,17 @@ public class DataItem {
     @SerializedName("Gambar")
     @Expose
     private String Gambar;
+    @SerializedName("Status")
+    @Expose
+    private String status;
+    @SerializedName("Tanggal")
+    @Expose
+    private String tanggal;
 
-    public DataItem(String UID, String nama, String penyakit, String deskripsi, String kategori, String gambar) {
-        this.UID = UID;
+    public DataItem() {
+    }
+
+    public DataItem(String nama, String penyakit, String deskripsi, String kategori, String gambar) {
         Nama = nama;
         Penyakit = penyakit;
         Deskripsi = deskripsi;
@@ -79,5 +87,21 @@ public class DataItem {
 
     public void setPenyakit(String penyakit) {
         Penyakit = penyakit;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getTanggal() {
+        return tanggal;
+    }
+
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
     }
 }

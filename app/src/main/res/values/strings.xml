@@ -116,4 +116,5 @@
     <string name="title_activity_berita_detail">BeritaDetail</string>
     <string name="logout">Logout</string>
     <string name="cek_ongkir">Biaya Pengiriman 2rb/kg</string>
+    <string name="buat_postingan">Buat Postingan</string>
 </resources>

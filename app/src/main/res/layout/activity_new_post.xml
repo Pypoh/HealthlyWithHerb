@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".fragment.NewPostActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="64dp"
+        android:orientation="vertical"
+        android:paddingLeft="36dp"
+        android:paddingRight="36dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Nama Obat"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/base_color_white" />
+
+        <EditText
+            android:id="@+id/et_nama_obat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@color/base_color_white"
+            android:hint="Nama Obat"
+            android:padding="8dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Penyakit"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/base_color_white" />
+
+        <EditText
+            android:id="@+id/et_penyakit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@color/base_color_white"
+            android:hint="Penyakit"
+            android:padding="8dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Kategori"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/base_color_white" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/base_color_white">
+            <Spinner
+                android:id="@+id/spinner_kategori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Spinner>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Deskripsi"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/base_color_white" />
+
+        <RelativeLayout
+            android:id="@+id/layout_textarea_deskirpsi"
+            android:layout_width="wrap_content"
+            android:layout_height="270dp"
+            android:background="@color/base_color_white">
+            <EditText
+                android:id="@+id/et_deskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@color/base_color_white"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+
+        <Button
+            android:id="@+id/button_submit"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/base_color_orange"
+            android:text="Submit"
+            android:textColor="@color/base_color_white" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
