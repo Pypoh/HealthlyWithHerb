@@ -71,6 +71,7 @@ public class CarouselItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 public void onClick(View v) {
                     Intent toDetail = new Intent(context, ItemDetailActivity.class);
                     toDetail.putExtra("KEY", item.getUID());
+                    toDetail.putExtra("SOURCEKEY", item.getNarasumber());
                     context.startActivity(toDetail);
                 }
             });

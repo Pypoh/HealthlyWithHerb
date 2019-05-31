@@ -56,7 +56,6 @@ public class CarouselAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-//        ItemsList itemsList = itemsListModel.getItemsList().get(position);
         final DataItemsList dataItemsList = mDataSet.get(position);
         if (holder instanceof CarouselViewHolder) {
             CarouselViewHolder vh = (CarouselViewHolder) holder;

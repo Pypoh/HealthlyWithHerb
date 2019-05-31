@@ -29,16 +29,20 @@ public class DataItem {
     @SerializedName("Tanggal")
     @Expose
     private String tanggal;
+    @SerializedName("Narasumber")
+    @Expose
+    private String Narasumber;
 
     public DataItem() {
     }
 
-    public DataItem(String nama, String penyakit, String deskripsi, String kategori, String gambar) {
+    public DataItem(String nama, String penyakit, String deskripsi, String kategori, String gambar, String narasumber) {
         Nama = nama;
         Penyakit = penyakit;
         Deskripsi = deskripsi;
         Kategori = kategori;
         Gambar = gambar;
+        Narasumber = narasumber;
     }
 
     public String getUID() {
@@ -103,5 +107,13 @@ public class DataItem {
 
     public void setTanggal(String tanggal) {
         this.tanggal = tanggal;
+    }
+
+    public String getNarasumber() {
+        return Narasumber;
+    }
+
+    public void setNarasumber(String narasumber) {
+        Narasumber = narasumber;
     }
 }

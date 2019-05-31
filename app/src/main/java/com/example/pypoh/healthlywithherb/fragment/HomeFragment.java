@@ -124,6 +124,7 @@ public class HomeFragment extends Fragment {
                 dataSetItem.clear();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     DataItem dataItem = ds.getValue(DataItem.class);
+                    dataItem.setUID(ds.getKey());
                     dataSetItem.add(dataItem);
                 }
                 dataSetList.clear();

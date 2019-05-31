@@ -1,11 +1,8 @@
 package com.example.pypoh.healthlywithherb.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +14,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.pypoh.healthlywithherb.EditProfileActivity;
 import com.example.pypoh.healthlywithherb.LoginActivity;
+import com.example.pypoh.healthlywithherb.NewPostActivity;
 import com.example.pypoh.healthlywithherb.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

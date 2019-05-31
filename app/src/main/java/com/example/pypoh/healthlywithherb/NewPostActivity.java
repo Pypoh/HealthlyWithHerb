@@ -1,4 +1,4 @@
-package com.example.pypoh.healthlywithherb.fragment;
+package com.example.pypoh.healthlywithherb;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -95,7 +95,7 @@ public class NewPostActivity extends AppCompatActivity {
     private void submitData() {
         String uid = userRef.child(userID).child("Posts").push().getKey();
         DataItem dataItem = new DataItem(mEditJudul.getText().toString(), mEditPenyakit.getText().toString(),
-                mEditDeskripsi.getText().toString(), kategoriText, null);
+                mEditDeskripsi.getText().toString(), kategoriText, null, userID);
         dataItem.setStatus("Pending");
         dataItem.setTanggal(getDate());
         userRef.child(userID).child("Posts").child(uid).setValue(dataItem);

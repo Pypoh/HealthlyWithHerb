@@ -21,17 +21,18 @@
         tools:ignore="MissingConstraints">
 
         <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout_berita"
+            android:id="@+id/toolbar_layout_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
+            app:title=""
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
 
             <com.synnapps.carouselview.CarouselView
-                android:id="@+id/carouselView"
+                android:id="@+id/carouselItem"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 app:fillColor="#FFFFFFFF"
@@ -44,7 +45,7 @@
                 tools:ignore="MissingConstraints" />
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar_detail"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"

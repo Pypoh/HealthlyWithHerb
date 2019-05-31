@@ -13,7 +13,7 @@
             android:name=".ItemDetailActivity"
             android:theme="@style/NoActionBar"></activity>
         <activity
-            android:name=".fragment.NewPostActivity"
+            android:name=".NewPostActivity"
             android:theme="@style/NoActionBar" />
         <activity android:name=".EditProfileActivity" />
         <activity

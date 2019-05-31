@@ -111,6 +111,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         data.put("Username", username);
         data.put("Email", email);
         data.put("Bergabung", getDate());
+        data.put("Reputasi", "Pengguna Baru");
+        data.put("JumlahPost", 0);
         data.put("Image", "https://firebasestorage.googleapis.com/v0/b/fishgo-7d2ae.appspot.com/o/users_image%2Ficon_profile.png?alt=media&token=f955a66f-b3c5-410d-824b-68a3e9ec2f35");
         String uid = auth.getUid();
 
