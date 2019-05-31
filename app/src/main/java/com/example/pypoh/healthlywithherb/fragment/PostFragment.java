@@ -70,6 +70,7 @@ public class PostFragment extends Fragment {
         userPostRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                dataSet.clear();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     DataItem dataItem = ds.getValue(DataItem.class);
                     dataSet.add(dataItem);

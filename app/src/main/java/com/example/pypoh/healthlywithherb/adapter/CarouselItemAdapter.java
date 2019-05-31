@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.pypoh.healthlywithherb.ItemDetailActivity;
 import com.example.pypoh.healthlywithherb.R;
 import com.example.pypoh.healthlywithherb.model.DataItem;
 import com.example.pypoh.healthlywithherb.viewholder.CarouselInvisbileItemViewHolder;
@@ -65,15 +66,14 @@ public class CarouselItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             vh.subTitleTv.setText(item.getPenyakit());
 
 
-//            vh.ll.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent toDetail = new Intent(context, ItemDetailActivity.class);
-//                    toDetail.putExtra("KEY", item.getUID());
-//                    toDetail.putExtra("PENJUAL_KEY", item.getPenjual());
-//                    context.startActivity(toDetail);
-//                }
-//            });
+            vh.ll.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent toDetail = new Intent(context, ItemDetailActivity.class);
+                    toDetail.putExtra("KEY", item.getUID());
+                    context.startActivity(toDetail);
+                }
+            });
         }
 
     }
