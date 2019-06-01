@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CategoryActivity"></activity>
         <activity
             android:name=".ItemDetailActivity"
-            android:theme="@style/NoActionBar"></activity>
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".NewPostActivity"
             android:theme="@style/NoActionBar" />

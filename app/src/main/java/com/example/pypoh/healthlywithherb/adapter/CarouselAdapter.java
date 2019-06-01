@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.pypoh.healthlywithherb.CategoryActivity;
 import com.example.pypoh.healthlywithherb.R;
 import com.example.pypoh.healthlywithherb.constant.Constant;
 import com.example.pypoh.healthlywithherb.model.DataItemsList;
@@ -120,15 +121,15 @@ public class CarouselAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             } else {
                 vh.updateGridAdapter(dataItemsList.getItems());
             }
-//            vh.li.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    // See More Click
-//                    Intent toCategory = new Intent(context, KategoriActivity.class);
-//                    toCategory.putExtra("KATEGORI_KEY", dataItemsList.getItemTitle());
-//                    context.startActivity(toCategory);
-//                }
-//            });
+            vh.li.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // See More Click
+                    Intent toCategory = new Intent(context, CategoryActivity.class);
+                    toCategory.putExtra("KATEGORI_KEY", dataItemsList.getItemTitle());
+                    context.startActivity(toCategory);
+                }
+            });
         }
 
     }

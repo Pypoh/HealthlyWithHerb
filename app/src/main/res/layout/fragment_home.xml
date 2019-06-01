@@ -23,7 +23,7 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             tools:ignore="MissingConstraints">
 
-            <ScrollView
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -35,7 +35,7 @@
                     <com.synnapps.carouselview.CarouselView
                         android:id="@+id/carouselView"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="240dp"
                         app:fillColor="#FFFFFFFF"
                         app:pageColor="#00000000"
                         app:radius="6dp"
@@ -45,15 +45,24 @@
                         tools:ignore="MissingConstraints" />
 
                     <android.support.v7.widget.RecyclerView
+                        android:id="@+id/category_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/base_color_white"
+                        android:layout_marginTop="8dp"
+                        android:clipToPadding="false">
+                    </android.support.v7.widget.RecyclerView>
+
+                    <android.support.v7.widget.RecyclerView
                         android:id="@+id/activity_main_rv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:clipToPadding="false" />
 
                 </LinearLayout>
 
-            </ScrollView>
+            </android.support.v4.widget.NestedScrollView>
 
             <ProgressBar
                 android:id="@+id/activity_main_progressBar"

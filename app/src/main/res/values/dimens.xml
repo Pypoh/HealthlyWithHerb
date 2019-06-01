@@ -32,7 +32,7 @@
     <integer name="grid_landscape_column">5</integer>
     <integer name="grid_portrait_column">3</integer>
 
-    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="app_bar_height">240dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
 
